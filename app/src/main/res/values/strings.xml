@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">HereMyBus</string>
+    <string name="title_activity_bus1_driver_map">Bus1DriverMap</string>
+    <string name="title_activity_bus1_user_map">Bus1UserMap</string>
+    <string name="title_activity_bus2_driver_map">Bus2DriverMap</string>
+    <string name="title_activity_bus2_user_map">Bus2UserMap</string>
+    <string name="title_activity_bus3_driver_map">Bus3DriverMap</string>
+    <string name="title_activity_bus3_user_map">Bus3UserMap</string>
 </resources>

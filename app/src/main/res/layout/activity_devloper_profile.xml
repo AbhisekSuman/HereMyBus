@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DevloperProfile">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/Profile1"
+        android:layout_width="150dp"
+        android:layout_height="143dp"
+        android:src="@drawable/bus1pr"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/name1"
+        android:layout_width="246dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:text="Abhisek Nayak"
+        android:textColor="#121111"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/Profile1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="233dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="4dp"
+        android:text="abhiseknayak@gmail.com"
+        android:textColor="#0B0A0A"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/Profile1"
+        app:layout_constraintTop_toBottomOf="@+id/name1" />
+
+    <ImageView
+        android:id="@+id/whatapp1"
+        android:layout_width="74dp"
+        android:layout_height="59dp"
+        app:layout_constraintEnd_toStartOf="@+id/facebook1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/whatsapp"
+        tools:layout_editor_absoluteY="163dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/facebook1"
+        android:layout_width="101dp"
+        android:layout_height="53dp"
+        app:srcCompat="@drawable/facebook"
+        tools:layout_editor_absoluteX="102dp"
+        tools:layout_editor_absoluteY="169dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/insta"
+        android:layout_width="67dp"
+        android:layout_height="51dp"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/insta"
+        tools:layout_editor_absoluteY="163dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/linkin"
+        android:layout_width="65dp"
+        android:layout_height="50dp"
+        app:srcCompat="@drawable/linkedin"
+        tools:layout_editor_absoluteX="226dp"
+        tools:layout_editor_absoluteY="163dp"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
