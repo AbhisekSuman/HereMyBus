@@ -194,9 +194,9 @@ public class Bus2UserMap extends FragmentActivity implements OnMapReadyCallback,
 
     //    For menu bar
     @Override
-    public boolean onCreateOptionsMenu(Menu menu_1) {
+    public boolean onCreateOptionsMenu(Menu menu_2) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_1, menu_1);
+        inflater.inflate(R.menu.menu_2, menu_2);
         return true;
     }
 
@@ -204,8 +204,8 @@ public class Bus2UserMap extends FragmentActivity implements OnMapReadyCallback,
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.driver){
-            Intent intent = new Intent(Bus2UserMap.this, driver.class);
+        if (id == R.id.driver2){
+            Intent intent = new Intent(Bus2UserMap.this, Driver2.class);
             startActivity(intent);
             Toast.makeText(this, "Driver", Toast.LENGTH_SHORT).show();
             return true;

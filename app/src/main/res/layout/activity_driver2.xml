@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gradiant">
+    android:background="#ECECEC">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
                     app:srcCompat="@drawable/top_background" />
 
                 <ImageView
-                    android:id="@+id/driverimg"
+                    android:id="@+id/driverimg2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="@+id/uperbackgroundview"
@@ -41,18 +41,18 @@
                     app:srcCompat="@drawable/profile" />
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/drivername2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Driver Name"
                     android:textSize="25dp"
                     android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="@+id/driverimg"
-                    app:layout_constraintStart_toStartOf="@+id/driverimg"
-                    app:layout_constraintTop_toBottomOf="@+id/driverimg" />
+                    app:layout_constraintEnd_toEndOf="@+id/driverimg2"
+                    app:layout_constraintStart_toStartOf="@+id/driverimg2"
+                    app:layout_constraintTop_toBottomOf="@+id/driverimg2" />
 
                 <TextView
-                    android:id="@+id/driveremail"
+                    android:id="@+id/driveremail2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="lionfischer@gmail.com"
@@ -60,10 +60,10 @@
                     android:textSize="20dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
+                    app:layout_constraintTop_toBottomOf="@+id/drivername2" />
 
                 <TextView
-                    android:id="@+id/connum"
+                    android:id="@+id/connum2"
                     android:layout_width="306dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="8dp"
@@ -76,11 +76,11 @@
                     android:textAlignment="viewStart"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    app:layout_constraintTop_toBottomOf="@+id/conname"
+                    app:layout_constraintTop_toBottomOf="@+id/conname2"
                     tools:layout_editor_absoluteX="52dp" />
 
                 <TextView
-                    android:id="@+id/conname"
+                    android:id="@+id/conname2"
                     android:layout_width="306dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="8dp"
@@ -94,11 +94,11 @@
                     android:textAlignment="viewStart"
                     android:textSize="18sp"
                     android:textStyle="bold"
-                    app:layout_constraintTop_toBottomOf="@+id/driverphn"
+                    app:layout_constraintTop_toBottomOf="@+id/driverphn2"
                     tools:layout_editor_absoluteX="52dp" />
 
                 <TextView
-                    android:id="@+id/driverphn"
+                    android:id="@+id/driverphn2"
                     android:layout_width="306dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="28dp"
@@ -111,7 +111,7 @@
                     android:textAlignment="viewStart"
                     android:textSize="20dp"
                     android:textStyle="bold"
-                    app:layout_constraintTop_toBottomOf="@+id/driveremail"
+                    app:layout_constraintTop_toBottomOf="@+id/driveremail2"
                     tools:layout_editor_absoluteX="52dp" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>

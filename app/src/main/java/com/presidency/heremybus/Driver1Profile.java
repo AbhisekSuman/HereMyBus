@@ -15,7 +15,7 @@ public class Driver1Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver1_profile);
 
-        location =findViewById(R.id.location);
+        location =findViewById(R.id.startservbtn);
         location.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

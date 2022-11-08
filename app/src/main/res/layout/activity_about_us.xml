@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AboutUs">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/aboutus1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:text="About Us"
+                android:textColor="#778899"
+                android:textSize="60dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/aboutus2"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <TextView
+                android:id="@+id/aboutus2"
+                android:layout_width="418dp"
+                android:layout_height="361dp"
+                android:gravity="center"
+                android:text="Track your bus live anytime, anywhere.
+Provide real time bus-arrival information bus stoppage near your
+location and time delays scheduled currently.
+A new good way to be assured of bus-arrival. No need to wait for the
+bus!!
+It basically tracks the live location of the bus, we can know where
+is our bus and when it gonna arrive to our particular location.
+Moreover, it provides other passenger advantages or features like:-
+• Search bus stop in our location.
+• Live updates.
+• You can save the location of areas of your interest.
+• Gives news like if the bus suffers any defeat or it
+gonna come late.
+So by this we can manage out worktime schedules, management
+and many more"
+                android:textColor="@color/lavender"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                tools:layout_editor_absoluteX="0dp"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:layout_width="359dp"
+        android:layout_height="92dp"
+        android:layout_marginTop="452dp"
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scrollView2"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/thankyou" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

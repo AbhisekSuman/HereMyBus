@@ -18,6 +18,27 @@
         android:theme="@style/Theme.HereMyBus"
         tools:targetApi="31">
         <activity
+            android:name=".Driver3"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Driver2"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".AboutUs"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".DevloperProfile"
             android:exported="false">
             <meta-data

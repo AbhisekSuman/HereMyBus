@@ -210,7 +210,7 @@ public class Bus1UserMap extends FragmentActivity implements OnMapReadyCallback,
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.driver){
+        if (id == R.id.driver1){
             Intent intent = new Intent(Bus1UserMap.this, driver.class);
             startActivity(intent);
             Toast.makeText(this, "Driver", Toast.LENGTH_SHORT).show();

@@ -71,17 +71,10 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         final SharedPreferences sharedPreferences = getSharedPreferences("Data", MODE_PRIVATE);
 
-//        Driver Information
-        if (id == R.id.driver){
-            Intent intent = new Intent(MainActivity.this, driver.class);
-            startActivity(intent);
-            Toast.makeText(this, "Driver", Toast.LENGTH_SHORT).show();
-            return true;
-        }
-
 //        Feedback Page
-        else if (id == R.id.feedback){
-            Intent intent = new Intent(MainActivity.this, feedback.class);
+         if (id == R.id.feedback){
+//            Intent intent = new Intent(MainActivity.this, feedback.class);
+//            startActivity(intent);
             Toast.makeText(this, "Feedback", Toast.LENGTH_SHORT).show();
             return true;
         }
@@ -89,7 +82,16 @@ public class MainActivity extends AppCompatActivity {
 //        About Us
         else if (id == R.id.aboutus){
             Intent intent = new Intent(MainActivity.this, driver.class);
+            startActivity(intent);
             Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+//         Developer Profile
+        else if (id == R.id.developer){
+            Intent intent = new Intent(MainActivity.this, DevloperProfile.class);
+            startActivity(intent);
+            Toast.makeText(this, "Welcome to our World", Toast.LENGTH_SHORT).show();
             return true;
         }
 

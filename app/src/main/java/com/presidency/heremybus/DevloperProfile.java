@@ -12,6 +12,8 @@ import android.widget.ImageView;
 
 public class DevloperProfile extends AppCompatActivity {
     ImageView whatsapp1,facebook1,insta1,linkin1;
+    ImageView whatsapp2,facebook2,insta2,linkin3;
+    ImageView whatsapp3,facebook3,insta3,linkedin3;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -21,8 +23,8 @@ public class DevloperProfile extends AppCompatActivity {
 
         whatsapp1 = findViewById(R.id.whatapp1);
         facebook1 = findViewById(R.id.facebook1);
-        insta1 = findViewById(R.id.insta);
-        linkin1 = findViewById(R.id.linkin);
+        insta1 = findViewById(R.id.insta1);
+        linkin1 = findViewById(R.id.linkin1);
 
         whatsapp1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,5 +86,7 @@ public class DevloperProfile extends AppCompatActivity {
                 openLink(sApplink,sPackage,sApplink);
             }
         });
+
+
     }
 }

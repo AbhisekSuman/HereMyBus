@@ -197,11 +197,11 @@ public class Bus3UserMap extends FragmentActivity implements OnMapReadyCallback,
         super.onPointerCaptureChanged(hasCapture);
     }
 
-    //    For menu bar
+    //    ::::::::::::::::::::::::::::::::   For menu bar       ::::::::::::::::::::::::::::::::::
     @Override
-    public boolean onCreateOptionsMenu(Menu menu_1) {
+    public boolean onCreateOptionsMenu(Menu menu_3) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_1, menu_1);
+        inflater.inflate(R.menu.menu_3, menu_3);
         return true;
     }
 
@@ -209,8 +209,8 @@ public class Bus3UserMap extends FragmentActivity implements OnMapReadyCallback,
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.driver){
-            Intent intent = new Intent(Bus3UserMap.this, driver.class);
+        if (id == R.id.driver3){
+            Intent intent = new Intent(Bus3UserMap.this, Driver3.class);
             startActivity(intent);
             Toast.makeText(this, "Driver", Toast.LENGTH_SHORT).show();
             return true;
