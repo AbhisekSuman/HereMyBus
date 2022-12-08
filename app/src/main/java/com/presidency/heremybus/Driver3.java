@@ -10,5 +10,9 @@ public class Driver3 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver3);
+
+        getSupportActionBar().setTitle("Driver Details");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
     }
 }

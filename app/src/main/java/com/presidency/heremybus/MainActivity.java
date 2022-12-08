@@ -13,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     private View busView1;
@@ -73,15 +75,15 @@ public class MainActivity extends AppCompatActivity {
 
 //        Feedback Page
          if (id == R.id.feedback){
-//            Intent intent = new Intent(MainActivity.this, feedback.class);
-//            startActivity(intent);
+            Intent intent = new Intent(MainActivity.this, Feedback.class);
+            startActivity(intent);
             Toast.makeText(this, "Feedback", Toast.LENGTH_SHORT).show();
             return true;
         }
 
 //        About Us
         else if (id == R.id.aboutus){
-            Intent intent = new Intent(MainActivity.this, driver.class);
+            Intent intent = new Intent(MainActivity.this, AboutUs.class);
             startActivity(intent);
             Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
             return true;
@@ -104,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
             Toast.makeText(this, "Bye!!", Toast.LENGTH_SHORT).show();
             return true;
-        }
+
+         }
         return super.onOptionsItemSelected(item);
     }
 }

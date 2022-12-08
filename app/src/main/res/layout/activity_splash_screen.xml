@@ -15,12 +15,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         app:layout_constraintBottom_toTopOf="@+id/Heremybus"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:lottie_autoPlay="true"
         app:lottie_loop="true"
         app:lottie_rawRes="@raw/location"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="92dp" />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/Heremybus"
@@ -28,15 +29,16 @@
         android:layout_height="88dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="72dp"
         android:text="Here My Bus"
         android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.595"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.804"
         tools:ignore="MissingConstraints" />
 
 

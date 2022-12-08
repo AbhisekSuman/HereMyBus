@@ -1,11 +1,15 @@
 package com.presidency.heremybus;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
@@ -33,14 +37,15 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.presidency.heremybus.databinding.ActivityBus1DriverMapBinding;
 import com.presidency.heremybus.databinding.ActivityBus1UserMapBinding;
 
 import java.util.List;
 
-public class Bus3UserMap extends FragmentActivity implements OnMapReadyCallback, LocationListener {
+public class Bus3UserMap extends AppCompatActivity implements OnMapReadyCallback, LocationListener {
 
     private GoogleMap mMap;
-    private ActivityBus1UserMapBinding binding;
+    private ActivityBus1DriverMapBinding binding;
 
     private DatabaseReference reference;
     private LocationManager manager;
@@ -57,28 +62,34 @@ public class Bus3UserMap extends FragmentActivity implements OnMapReadyCallback,
 
     LatLngBounds.Builder builder = new LatLngBounds.Builder();
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        binding = ActivityBus1UserMapBinding.inflate(getLayoutInflater());
+        binding = ActivityBus1DriverMapBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        manager= (LocationManager) getSystemService(LOCATION_SERVICE);
+        getSupportActionBar().setTitle("Bus3 Location");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        reference= FirebaseDatabase.getInstance().getReference().child("Driver-3");
+        manager = (LocationManager) getSystemService(LOCATION_SERVICE);
+
+        reference = FirebaseDatabase.getInstance().getReference().child("Driver-3");
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        readChanges();
+//        getLocationUpadtes();
+
+        reedChanges();
     }
 
-
-    private void readChanges() {
+    private void reedChanges() {
         reference.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -86,9 +97,6 @@ public class Bus3UserMap extends FragmentActivity implements OnMapReadyCallback,
                         DriverLocation location = dataSnapshot.getValue(DriverLocation.class);
                         if (location != null) {
                             myMarker.setPosition(new LatLng(location.getLatitude(),location.getLongitude()));
-                            LatLng Bus = new LatLng(location.getLatitude(), location.getLongitude());
-                            mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(Bus, 18), 3000, null);
-
                         }
                     }catch (Exception e){
                         Toast.makeText(Bus3UserMap.this, e.getMessage(), Toast.LENGTH_SHORT).show();
@@ -101,7 +109,37 @@ public class Bus3UserMap extends FragmentActivity implements OnMapReadyCallback,
 
             }
         });
+    }
 
+    private void getLocationUpadtes() {
+        if (manager != null) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED &&
+                    ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED)
+            {
+                if (manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+                    manager.requestLocationUpdates(LocationManager.GPS_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
+                } else if (manager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+                    manager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, MIN_TIME, MIN_DISTANCE, this);
+                } else {
+                    Toast.makeText(this, "No pRovide", Toast.LENGTH_SHORT).show();
+                }
+            }else {
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 101);
+            }
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        if (requestCode == 101) {
+            if (grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED) {
+                getLocationUpadtes();
+            }else {
+                Toast.makeText(this, "Permission required", Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 
     /**
@@ -117,8 +155,14 @@ public class Bus3UserMap extends FragmentActivity implements OnMapReadyCallback,
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Default Marker
-        LatLng sydney = new LatLng(-34, 151);
+        // Add a marker in Sydney and move the camera
+        LatLng sydney = new LatLng(19.318045,84.879853);
+//        Default Location
+
+        myMarker = mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney").
+                icon(bitmapDescriptorFromVector(getApplicationContext(), R.drawable.ic_baseline_directions_bus_filled_24)));
+
+//                                              Bound
         builder.include(one);
         builder.include(two);
         builder.include(three);
@@ -138,9 +182,9 @@ public class Bus3UserMap extends FragmentActivity implements OnMapReadyCallback,
         //set zoom to level to current so that you won't be able to zoom out viz. move outside bounds
         mMap.setMinZoomPreference(mMap.getCameraPosition().zoom);
 
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney").
-                icon(bitmapDescriptorFromVector(getApplicationContext(), R.drawable.ic_baseline_directions_bus_filled_24)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+
+        mMap.getUiSettings().setZoomControlsEnabled(true);
+        mMap.getUiSettings().setAllGesturesEnabled(true);
     }
 
     //For Bus Marker
@@ -153,17 +197,17 @@ public class Bus3UserMap extends FragmentActivity implements OnMapReadyCallback,
         return BitmapDescriptorFactory.fromBitmap(bitmap);
     }
 
+
     @Override
     public void onLocationChanged(@NonNull Location location) {
-        if (location!=null){
+        if (location != null) {
             saveLocation(location);
         }else{
-            Toast.makeText(this, "No location", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "No Location", Toast.LENGTH_SHORT).show();
         }
     }
 
     private void saveLocation(Location location) {
-
         reference.setValue(location);
     }
 
@@ -190,31 +234,5 @@ public class Bus3UserMap extends FragmentActivity implements OnMapReadyCallback,
     @Override
     public void onProviderDisabled(@NonNull String provider) {
         LocationListener.super.onProviderDisabled(provider);
-    }
-
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-        super.onPointerCaptureChanged(hasCapture);
-    }
-
-    //    ::::::::::::::::::::::::::::::::   For menu bar       ::::::::::::::::::::::::::::::::::
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu_3) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_3, menu_3);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-
-        if (id == R.id.driver3){
-            Intent intent = new Intent(Bus3UserMap.this, Driver3.class);
-            startActivity(intent);
-            Toast.makeText(this, "Driver", Toast.LENGTH_SHORT).show();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 }
