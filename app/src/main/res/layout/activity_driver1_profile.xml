@@ -65,19 +65,20 @@
                     app:layout_constraintTop_toBottomOf="@+id/sdrivername1" />
 
 
-                <com.airbnb.lottie.LottieAnimationView
-                    android:layout_width="406dp"
-                    android:layout_height="85dp"
-                    app:layout_constraintBottom_toTopOf="@+id/startservbtn"
+                <Button
+                    android:id="@+id/stpserv1"
+                    android:layout_width="187dp"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="40dp"
+                    android:text="STOP SERVICE"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:lottie_rawRes="@raw/busstart" />
-
+                    app:layout_constraintTop_toBottomOf="@+id/sdriveremail1" />
 
                 <Button
                     android:id="@+id/startservbtn"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_width="261dp"
+                    android:layout_height="59dp"
                     android:background="@drawable/background_blue"
 
 
@@ -88,7 +89,10 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/sdriveremail1" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sdriveremail1"
+                    app:layout_constraintVertical_bias="0.466" />
 
                 <Button
                     android:id="@+id/permission"
@@ -100,7 +104,8 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/startservbtn" />
+                    app:layout_constraintTop_toTopOf="@+id/startservbtn"
+                    app:layout_constraintVertical_bias="0.0" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -234,5 +235,31 @@ public class Bus2UserMap extends AppCompatActivity implements OnMapReadyCallback
     @Override
     public void onProviderDisabled(@NonNull String provider) {
         LocationListener.super.onProviderDisabled(provider);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_2, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+        final SharedPreferences sharedPreferences = getSharedPreferences("Data", MODE_PRIVATE);
+
+        if (id == R.id.driver2){
+            Intent intent = new Intent(Bus2UserMap.this, Driver3.class);
+            startActivity(intent);
+            Toast.makeText(this, "Feedback", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+
+        else
+        {
+
+        }
+        return true;
     }
 }

@@ -64,19 +64,20 @@
                     app:layout_constraintTop_toBottomOf="@+id/sdrivername3" />
 
 
-                <com.airbnb.lottie.LottieAnimationView
-                    android:layout_width="406dp"
-                    android:layout_height="85dp"
-                    app:layout_constraintBottom_toTopOf="@+id/startservbtn"
+                <Button
+                    android:id="@+id/stpserv3"
+                    android:layout_width="187dp"
+                    android:layout_height="58dp"
+                    android:layout_marginBottom="24dp"
+                    android:text="STOP SERVICE"
+                    app:layout_constraintBottom_toTopOf="@+id/startservbtn3"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:lottie_rawRes="@raw/busstart" />
-
+                    app:layout_constraintStart_toStartOf="parent" />
 
                 <Button
                     android:id="@+id/startservbtn3"
-                    android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_width="261dp"
+                    android:layout_height="59dp"
                     android:background="@drawable/background_blue"
 
 
@@ -87,16 +88,21 @@
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/sdriveremail3" />
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sdriveremail3"
+                    app:layout_constraintVertical_bias="0.605" />
 
                 <Button
                     android:id="@+id/permission3"
-                    android:layout_width="137dp"
-                    android:layout_height="42dp"
+                    android:layout_width="142dp"
+                    android:layout_height="57dp"
                     android:layout_marginTop="32dp"
+                    android:layout_marginBottom="36dp"
                     android:text="Permission"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.498"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/startservbtn" />
 
