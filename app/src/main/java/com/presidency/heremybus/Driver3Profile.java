@@ -11,6 +11,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -25,7 +26,7 @@ import java.util.concurrent.TimeUnit;
 public class Driver3Profile extends AppCompatActivity {
 
     public Activity activity;
-    Button permission, Location;
+    Button permission, Location, stop;
     private final String[] foreground_permission =
             {Manifest.permission.ACCESS_FINE_LOCATION,
                     Manifest.permission.ACCESS_COARSE_LOCATION
@@ -48,6 +49,7 @@ public class Driver3Profile extends AppCompatActivity {
         activity = Driver3Profile.this;
         permission = findViewById(R.id.permission3);
         Location = findViewById(R.id.startservbtn3);
+        stop = findViewById(R.id.stpserv3);
 
         permissionManager = PermissionManager.getInstance(this);
         locationManager = LocationManager.getInstance(this);
@@ -75,6 +77,16 @@ public class Driver3Profile extends AppCompatActivity {
                         locationManager.createLocationRequest();
                         Toast.makeText(Driver3Profile.this, "Location service is enabled", Toast.LENGTH_SHORT).show();
                     }
+                }
+            }
+        });
+
+        stop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Driver3Profile.this, LocationWork.class);
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    startForegroundService(intent);
                 }
             }
         });

@@ -65,14 +65,17 @@
 
 
                 <Button
-                    android:id="@+id/stpserv3"
-                    android:layout_width="187dp"
-                    android:layout_height="58dp"
+                    android:id="@+id/permission3"
+                    android:layout_width="156dp"
+                    android:layout_height="62dp"
                     android:layout_marginBottom="24dp"
-                    android:text="STOP SERVICE"
+                    android:text="PERMISSION"
                     app:layout_constraintBottom_toTopOf="@+id/startservbtn3"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintHorizontal_bias="0.533"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/sdrivername3"
+                    app:layout_constraintVertical_bias="1.0" />
 
                 <Button
                     android:id="@+id/startservbtn3"
@@ -94,17 +97,18 @@
                     app:layout_constraintVertical_bias="0.605" />
 
                 <Button
-                    android:id="@+id/permission3"
-                    android:layout_width="142dp"
-                    android:layout_height="57dp"
-                    android:layout_marginTop="32dp"
-                    android:layout_marginBottom="36dp"
-                    android:text="Permission"
+                    android:id="@+id/stpserv3"
+                    android:layout_width="261dp"
+                    android:layout_height="59dp"
+                    android:elevation="3dp"
+
+                    android:text = "STOP SERVICE"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintHorizontal_bias="0.573"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/startservbtn" />
+                    app:layout_constraintTop_toBottomOf="@+id/startservbtn3"
+                    app:layout_constraintVertical_bias="0.563" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

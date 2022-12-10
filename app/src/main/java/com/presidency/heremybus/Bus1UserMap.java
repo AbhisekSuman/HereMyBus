@@ -244,12 +244,17 @@ public class Bus1UserMap extends AppCompatActivity implements OnMapReadyCallback
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         final SharedPreferences sharedPreferences = getSharedPreferences("Data", MODE_PRIVATE);
 
         if (id == R.id.driver1){
-            Intent intent = new Intent(Bus1UserMap.this, driver.class);
+            Intent intent = new Intent(Bus1UserMap.this, Driver1.class);
             startActivity(intent);
             Toast.makeText(this, "Feedback", Toast.LENGTH_SHORT).show();
             return true;

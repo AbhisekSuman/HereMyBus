@@ -1,6 +1,7 @@
 package com.presidency.heremybus;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.work.BackoffPolicy;
 import androidx.work.OneTimeWorkRequest;
@@ -11,6 +12,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -25,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 public class Driver1Profile extends AppCompatActivity {
 
     public Activity activity;
-    Button permission, Location;
+    Button permission, Location, stop;
     private final String[] foreground_permission =
             {Manifest.permission.ACCESS_FINE_LOCATION,
                     Manifest.permission.ACCESS_COARSE_LOCATION
@@ -47,6 +49,7 @@ public class Driver1Profile extends AppCompatActivity {
         activity = Driver1Profile.this;
         permission = findViewById(R.id.permission);
         Location = findViewById(R.id.startservbtn);
+        stop = findViewById(R.id.stpserv);
 
 
         permissionManager = PermissionManager.getInstance(this);
@@ -76,6 +79,15 @@ public class Driver1Profile extends AppCompatActivity {
                         Toast.makeText(Driver1Profile.this, "Location service is enabled", Toast.LENGTH_SHORT).show();
                     }
                 }
+            }
+        });
+
+        stop.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Driver1Profile.this, LocationWork.class);
+                startForegroundService(intent);
             }
         });
     }

@@ -245,6 +245,11 @@ public class Bus2UserMap extends AppCompatActivity implements OnMapReadyCallback
     }
 
     @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+    }
+
+    @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
         final SharedPreferences sharedPreferences = getSharedPreferences("Data", MODE_PRIVATE);

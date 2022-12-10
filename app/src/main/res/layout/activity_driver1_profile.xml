@@ -66,14 +66,16 @@
 
 
                 <Button
-                    android:id="@+id/stpserv1"
-                    android:layout_width="187dp"
-                    android:layout_height="58dp"
+                    android:id="@+id/permission"
+                    android:layout_width="139dp"
+                    android:layout_height="47dp"
                     android:layout_marginTop="40dp"
-                    android:text="STOP SERVICE"
+                    android:text="PERMISSION"
+                    app:layout_constraintBottom_toTopOf="@+id/startservbtn"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/sdriveremail1" />
+                    app:layout_constraintTop_toBottomOf="@+id/sdriveremail1"
+                    app:layout_constraintVertical_bias="0.0" />
 
                 <Button
                     android:id="@+id/startservbtn"
@@ -90,22 +92,25 @@
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.573"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/sdriveremail1"
-                    app:layout_constraintVertical_bias="0.466" />
+                    app:layout_constraintVertical_bias="0.563" />
 
                 <Button
-                    android:id="@+id/permission"
-                    android:layout_width="152dp"
-                    android:layout_height="63dp"
-                    android:layout_marginTop="112dp"
-                    android:text="Permission"
+                    android:id="@+id/stpserv"
+                    android:layout_width="261dp"
+                    android:layout_height="59dp"
+
+                    android:elevation="3dp"
+
+                    android:text = "STOP SERVICE"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.498"
+                    app:layout_constraintHorizontal_bias="0.573"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/startservbtn"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintTop_toBottomOf="@+id/startservbtn"
+                    app:layout_constraintVertical_bias="0.563" />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

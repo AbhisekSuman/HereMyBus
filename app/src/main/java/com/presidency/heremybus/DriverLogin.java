@@ -92,10 +92,9 @@ public class DriverLogin extends AppCompatActivity {
 
                 isvalid1 = validate1(password);
 
-
-                if (!isvalid1) {
+                if (!isvalid2) {
                     counter1--;
-                    Toast.makeText(DriverLogin.this, "Incorrect Credentials", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DriverLogin.this, ".....", Toast.LENGTH_SHORT).show();
                     if (counter1 == 0) {
                         elogin.setEnabled(false);
                     }
@@ -103,11 +102,8 @@ public class DriverLogin extends AppCompatActivity {
                 }
                 else {
                     Toast.makeText(DriverLogin.this, "Login SuccessFull", Toast.LENGTH_SHORT).show();
-
-                    Intent intent = new Intent(getApplicationContext(),Driver2Profile.class);
-                    startActivity(intent);
-
-
+                    Intent intent1 = new Intent(getApplicationContext(),Driver2Profile.class);
+                    startActivity(intent1);
                 }
 
 

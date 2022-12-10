@@ -62,7 +62,7 @@ public class Bus3DriverMap extends FragmentActivity implements OnMapReadyCallbac
 
         manager = (LocationManager) getSystemService(LOCATION_SERVICE);
 
-        reference = FirebaseDatabase.getInstance().getReference().child("User-2");
+        reference = FirebaseDatabase.getInstance().getReference().child("Driver-3");
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()

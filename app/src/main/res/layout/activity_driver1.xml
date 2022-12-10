@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradiant">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="411dp"
+                android:layout_height="605dp"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:id="@+id/uperbackgroundview"
+                    android:layout_width="453dp"
+                    android:layout_height="143dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/top_background" />
+
+                <ImageView
+                    android:id="@+id/driverimg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/uperbackgroundview"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/uperbackgroundview"
+                    app:srcCompat="@drawable/profile" />
+
+                <TextView
+                    android:id="@+id/textView14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Driver Name"
+                    android:textSize="25dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/driverimg"
+                    app:layout_constraintStart_toStartOf="@+id/driverimg"
+                    app:layout_constraintTop_toBottomOf="@+id/driverimg" />
+
+                <TextView
+                    android:id="@+id/driveremail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="lionfischer@gmail.com"
+
+                    android:textSize="20dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView14" />
+
+                <TextView
+                    android:id="@+id/connum"
+                    android:layout_width="306dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/background_btn"
+                    android:drawableStart="@drawable/ic_baseline_phone_24"
+                    android:drawablePadding="20dp"
+                    android:elevation="3dp"
+                    android:paddingStart="20dp"
+                    android:text="Conducter phone number"
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/conname"
+                    tools:layout_editor_absoluteX="52dp" />
+
+                <TextView
+                    android:id="@+id/conname"
+                    android:layout_width="306dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="8dp"
+
+                    android:background="@drawable/background_btn"
+                    android:drawableStart="@drawable/ic_baseline_person_24"
+                    android:drawablePadding="20dp"
+                    android:elevation="3dp"
+                    android:paddingStart="20dp"
+                    android:text="Conducter Name"
+                    android:textAlignment="viewStart"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/driverphn"
+                    tools:layout_editor_absoluteX="52dp" />
+
+                <TextView
+                    android:id="@+id/driverphn"
+                    android:layout_width="306dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/background_btn"
+                    android:drawableStart="@drawable/ic_baseline_phone_24"
+                    android:drawablePadding="20dp"
+                    android:elevation="3dp"
+                    android:paddingStart="20dp"
+                    android:text="Driver phone number"
+                    android:textAlignment="viewStart"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toBottomOf="@+id/driveremail"
+                    tools:layout_editor_absoluteX="52dp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</RelativeLayout>
